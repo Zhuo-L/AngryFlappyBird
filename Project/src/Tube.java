@@ -56,7 +56,8 @@ public class Tube {
         r.y = y;
 
         if (image == null) {
-            image = ImageLoader.loadImage("assets/pipe-" + direction + ".png");
+            String imagePath = System.getProperty("user.dir") + "/Project/src/assets/pipe-"+direction+".png";
+            image = ImageLoader.loadImage(imagePath);
         }
         r.image = image;
 

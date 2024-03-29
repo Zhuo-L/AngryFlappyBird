@@ -81,7 +81,8 @@ public class MainGame {
     //将背景、管道、小鸟全部绘制到Render容器中并返回给GamePanel处理
     public ArrayList<Drawer> getDrawers() {
         ArrayList<Drawer> drawers = new ArrayList<Drawer>();
-        drawers.add(new Drawer(0, 0, "assets/background.png"));
+        String imagePath = System.getProperty("user.dir") + "/Project/src/assets/background.png";
+        drawers.add(new Drawer(0, 0, imagePath));
 
 
         for (Tube pipe : pipes)
@@ -100,7 +101,7 @@ public class MainGame {
             Tube northPipe = null;
             Tube southPipe = null;
 
-            // 
+            //
             for (Tube pipe : pipes) {
                 if (pipe.x - pipe.width < 0) {
                     if (northPipe == null) {

@@ -42,7 +42,8 @@ public class Bird {
         r.x = x;
         r.y = y;
         if (image == null) {
-            image = ImageLoader.loadImage("assets/bird.png");
+            String imagePath = System.getProperty("user.dir") + "/Project/src/assets/bird.png";
+            image = ImageLoader.loadImage(imagePath);
         }
         r.image = image;
         rotation = (90 * (ySpeed + 20) / 20) - 90;
@@ -74,8 +75,8 @@ public class Bird {
 
         if (!death && keyboard.Pushed(KeyEvent.VK_SPACE) && jumpDelay <= 0) {
             //由于按了SPACE竖直方向速度变为-10
-            ySpeed = -10;
-            jumpDelay = 2;
+            ySpeed = -5;
+            jumpDelay = 1;
         }
 
         y += (int) ySpeed;
